@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.MainActivity">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtUserName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="name"
+            app:layout_constraintEnd_toStartOf="@id/txtUserName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.7">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnAddUser"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Add"
+            app:layout_constraintBottom_toBottomOf="@id/txtUserName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txtUserName"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.2" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcViewUser"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtUserName"
+            app:layout_constraintVertical_bias="0.05" />
+
+        <Button
+            android:id="@+id/btnDeleteUsersLocal"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete users from local"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rcViewUser"
+            app:layout_constraintWidth_percent="0.2" />
+
+        <Button
+            android:id="@+id/btnFetchUsersFromRemote"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fetch Users From Remote"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnDeleteUsersLocal"
+            app:layout_constraintWidth_percent="0.2" />
+
+        <Button
+            android:id="@+id/btnBackupUsers"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Backup Users With One Time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnFetchUsersFromRemote"
+            app:layout_constraintWidth_percent="0.2" />
+
+        <Button
+            android:id="@+id/btnCancelBackupUsers"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel Backup Users"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnBackupUsers"
+            app:layout_constraintWidth_percent="0.2" />
+
+        <Button
+            android:id="@+id/btnBackupUserPeriodic"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Backup Users With Periodic Time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnCancelBackupUsers"
+            app:layout_constraintWidth_percent="0.2" />
+
+        <TextView
+            android:id="@+id/txtStateLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Last Backup State:"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txtLastBackupState"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.3" />
+
+        <TextView
+            android:id="@+id/txtLastBackupState"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="deneme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txtStateLabel"
+            app:layout_constraintWidth_percent="0.5"
+            tools:text="Running" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

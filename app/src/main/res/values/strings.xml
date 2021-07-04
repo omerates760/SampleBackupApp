@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SampleBackupApp</string>
+    <string name="worker_completed_time">WORKER_COMPLETED_TIME</string>
+</resources>
